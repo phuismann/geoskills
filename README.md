@@ -146,12 +146,15 @@ Contributions are welcome! Here's how to get involved:
 2. **Improve an existing skill** — edit the relevant `SKILL.md` and explain what gap or inaccuracy the change addresses.
 3. **Report an issue** — open a GitHub issue describing the problem, the context (tool, model, dataset type), and what behaviour you expected.
 
+The repository also includes [AGENTS.md](AGENTS.md), which defines the validation and review standard future agents should apply when creating or editing Markdown files in this repo.
+
 ### Guidelines
 
 - One skill per pull request keeps reviews focused.
 - Keep the `description` front-matter concrete and trigger-phrase rich — this is what agents use for discovery.
 - Prefer checklists and structured output formats over free-form prose.
 - Do not add external dependencies unless they are truly unavoidable.
+- Follow the validation checklist in [AGENTS.md](AGENTS.md) before finishing Markdown changes.
 - All contributions are released under the [MIT License](LICENSE).
 
 ## Notes
