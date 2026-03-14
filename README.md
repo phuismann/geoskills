@@ -1,3 +1,11 @@
+```
+  __ _  ___  ___  ___  _  _(_) | |___
+ / _` |/ _ \/ _ \/ __|| |/ / | | / __|
+| (_| |  __/ (_) \__ \|   <| | | \__ \
+ \__, |\___|\___/|___/|_|\_\_|_|_|___/
+ |___/
+```
+
 # geoskills
 
 Minimal agent skills for geodata science and geospatial data work.
@@ -63,6 +71,22 @@ Use for geospatial SQL workflows in PostgreSQL/PostGIS, including geometry versu
 - `remote-sensing-index-selection`
 - `openstreetmap-feature-extraction`
 - `geodata-documentation`
+
+## Contributing
+
+Contributions are welcome! Here's how to get involved:
+
+1. **New skill** — copy `template/geo-skill-template`, follow the design rules above, and open a pull request with a clear description of the skill's scope.
+2. **Improve an existing skill** — edit the relevant `SKILL.md` and explain what gap or inaccuracy the change addresses.
+3. **Report an issue** — open a GitHub issue describing the problem, the context (tool, model, dataset type), and what behaviour you expected.
+
+### Guidelines
+
+- One skill per pull request keeps reviews focused.
+- Keep the `description` front-matter concrete and trigger-phrase rich — this is what agents use for discovery.
+- Prefer checklists and structured output formats over free-form prose.
+- Do not add external dependencies unless they are truly unavoidable.
+- All contributions are released under the [MIT License](LICENSE).
 
 ## Notes
 
