@@ -22,6 +22,8 @@ skills/
     SKILL.md
   geodata-qaqc/
     SKILL.md
+  geospatial-ml/
+    SKILL.md
   snowflake-geospatial/
     SKILL.md
   postgis-geospatial/
@@ -47,6 +49,9 @@ Use for geospatial SQL workflows in Snowflake, including `GEOGRAPHY`, spatial jo
 
 ### `postgis-geospatial`
 Use for geospatial SQL workflows in PostgreSQL/PostGIS, including geometry versus geography choices, indexing, SRID handling, and spatial query tuning.
+
+### `geospatial-ml`
+Use when applying machine learning to geospatial data. Covers spatial feature engineering with geopandas, momepy, osmnx, and pysal; raster feature extraction with rasterio and torchgeo; spatial cross-validation; and common pitfalls like autocorrelation-driven data leakage.
 
 ## Design Rules
 
