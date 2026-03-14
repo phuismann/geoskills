@@ -22,6 +22,8 @@ skills/
     SKILL.md
   geodata-qaqc/
     SKILL.md
+  global-crs-selection/
+    SKILL.md
   geospatial-ml/
     SKILL.md
   snowflake-geospatial/
@@ -43,6 +45,9 @@ Use when the task involves projections, EPSG codes, datum mismatches, unit confu
 
 ### `geodata-qaqc`
 Use for basic quality control of vector or raster datasets before analysis, delivery, or publication.
+
+### `global-crs-selection`
+Use when choosing projections for world-scale or near-global work. Covers task-based selection across `EPSG:4326`, `EPSG:3857`, Equal Earth, LAEA, compromise projections, antimeridian handling, and polar edge cases.
 
 ### `snowflake-geospatial`
 Use for geospatial SQL workflows in Snowflake, including `GEOGRAPHY`, spatial joins, distance filters, and warehouse-aware query planning.
@@ -68,6 +73,62 @@ Use when applying machine learning to geospatial data. Covers spatial feature en
 3. Set `name` to match the folder name exactly.
 4. Rewrite `description` so it includes the phrases a user would naturally say.
 5. Replace the template sections with a concrete workflow, examples, and constraints.
+
+## Using These Skills
+
+These folders are source material for agent skills. They are not auto-discovered by Claude Code or Codex from this repo layout alone. To use a skill, copy or symlink the specific skill folder into the tool's skill directory structure.
+
+### Claude Code
+
+- Project scope: copy a skill folder to `.claude/skills/<skill-name>/SKILL.md`
+- Personal scope: copy a skill folder to `~/.claude/skills/<skill-name>/SKILL.md`
+- Claude can load a skill automatically when the `description` matches your request.
+- You can also invoke it directly with `/skill-name`
+
+Example:
+
+```text
+.claude/
+  skills/
+    global-crs-selection/
+      SKILL.md
+```
+
+Then ask a natural question such as:
+
+```text
+Which CRS should I use for a world choropleth?
+```
+
+Or invoke it directly:
+
+```text
+/global-crs-selection world choropleth of country-level emissions
+```
+
+### Codex
+
+- Repository scope: copy a skill folder to `.agents/skills/<skill-name>/SKILL.md`
+- Codex can invoke skills implicitly when the `description` matches the task.
+- You can inspect or invoke skills explicitly from the CLI or IDE skill picker using `/skills` or by mentioning the skill with `$`
+- Use `AGENTS.md` for broad repository instructions, and use `SKILL.md` folders for focused, reusable workflows like CRS selection, QAQC, or feature engineering.
+
+Example:
+
+```text
+.agents/
+  skills/
+    global-crs-selection/
+      SKILL.md
+```
+
+Example prompt:
+
+```text
+Use the global-crs-selection skill to recommend a projection for a world population map.
+```
+
+If you want these skills available everywhere, place them in your personal skill directory for the relevant tool instead of keeping them only in a single repository.
 
 ## Next Good Additions
 
