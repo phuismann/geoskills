@@ -54,6 +54,47 @@ Use this skill when the spatial extent is continental, global, transoceanic, or 
 - Avoid equatorial or generic world projections for Arctic and Antarctic analysis.
 - Use a pole-centred azimuthal or stereographic projection appropriate to the task.
 
+## Common Country Defaults For Meters Or Feet
+
+Use this section when the user is really asking for a practical projected CRS with linear units for local analysis, buffering, area, or engineering-style measurements.
+
+| Country / region | Common projected CRS choice | Units | Notes |
+|---|---|---|---|
+| United States | State Plane zone for the state or county | Feet or meters, depending on zone definition | Best default for local engineering and parcel work. Do not use one national CRS for precise local measurement everywhere. |
+| United States | UTM zone covering the study area | Meters | Good practical default for regional analysis when State Plane is unnecessary. |
+| Canada | UTM zone for the province or study area | Meters | Common default for local and regional work. Some provinces also use their own standard systems. |
+| United Kingdom | British National Grid (`EPSG:27700`) | Meters | Standard default for Great Britain. |
+| Ireland | Irish Transverse Mercator (`EPSG:2157`) | Meters | Good default for modern work in Ireland. |
+| France | Lambert-93 (`EPSG:2154`) | Meters | Standard metropolitan France default. |
+| Germany | ETRS89 / UTM zone 32N or 33N | Meters | Pick the UTM zone that actually covers the study area. |
+| Spain | ETRS89 / UTM zone 28N, 29N, 30N, or 31N | Meters | Use the correct zone; Spain spans multiple zones. |
+| Italy | ETRS89 / UTM zone 32N or 33N | Meters | Use the appropriate zone for the region. |
+| Netherlands | Amersfoort / RD New (`EPSG:28992`) | Meters | Standard Dutch projected CRS. |
+| Belgium | Belgian Lambert 2008 (`EPSG:3812`) | Meters | Common modern national default. |
+| Switzerland | CH1903+ / LV95 (`EPSG:2056`) | Meters | Standard Swiss projected CRS. |
+| Portugal | ETRS89 / Portugal TM06 (`EPSG:3763`) | Meters | Good mainland Portugal default. |
+| Australia | GDA2020 / MGA zone for the area | Meters | Use the correct MGA zone for local analysis; use Australian Albers for nationwide area summaries. |
+| New Zealand | NZGD2000 / New Zealand Transverse Mercator 2000 (`EPSG:2193`) | Meters | Standard national default for NZ. |
+| Japan | Japan Plane Rectangular CS zone for the prefecture or project | Meters | Best for precise local work; Japan uses many zones. |
+| South Korea | Korea 2000 / Unified CS (`EPSG:5179`) | Meters | Common default for national and regional work. |
+| Brazil | SIRGAS 2000 / UTM zone for the area | Meters | Brazil spans many UTM zones; choose locally. |
+| Mexico | UTM zone for the area | Meters | Better than forcing one CRS across the whole country for local analysis. |
+| South Africa | Lo zone or national projected system used by the data provider | Meters | Verify the source CRS carefully; local systems are common. |
+
+### Fast Rules For Units
+
+- If the user says "I need meters," recommend a local projected CRS, usually a national grid or the correct UTM zone.
+- If the user says "I need feet" in the United States, prefer the appropriate State Plane definition and confirm whether the workflow expects US survey feet or international feet.
+- If the country spans several UTM zones, do not recommend one zone blindly unless the study area is confined to that zone.
+- For countrywide statistical mapping, a national equal-area CRS may be better than UTM even when the user still wants meter-based units.
+- If the task is legal, cadastral, or engineering work, prefer the CRS used by the authoritative local agency over a generic fallback.
+
+### What To Say When Unsure
+
+- "For precise measurement, I need the actual study area within the country before I pick the best projected CRS."
+- "For local work, use the relevant national grid or UTM zone; for countrywide mapping, use the country's standard national projection if one exists."
+- "If the source data already comes from an authoritative local agency, keep its projected CRS unless there is a strong reason to transform it."
+
 ## Workflow
 
 1. Establish the spatial extent.
